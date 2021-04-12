@@ -52,10 +52,3 @@
     dest: /home/pi/.bash_profile
     owner: 1000
     group: 1000
-    
- - name: Set openbox-session in xinitrc
-  template:
-    src: xinitrc.j2
-    dest: /home/pi/.xinitrc
-    owner: 1000
-    group: 1000
