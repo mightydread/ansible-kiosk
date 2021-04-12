@@ -1,3 +1,6 @@
 #!/bin/bash
 
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx -- {% for p in kiosk_startx_params %}{{ p }} {% endfor %}
+case $(tty) in /dev/tty[0-9]*)
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx /usr/bin/openbox-session -- {% for p in kiosk_startx_params %}{{ p }} {% endfor %} ;;
+esac
+
